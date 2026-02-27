@@ -1,8 +1,8 @@
-run: GitHub Action Demo
+name: GitHub Action Demo
 on: [ push ]
 jobs:
  Explore-GitHub-Action:
-  runs on: ubuntu-latest
+  runs-on: ubuntu-latest
   steps:
    - uses: actions/checkout@v2
    - run: echo "the job was automatically triggered by a ${{ github.even_name }} event ."
