@@ -1,10 +1,13 @@
 name: merge CI
-on: [ pull-request ]
+on: [ pull_request ]
 jobs:
- Explore-GitHub-Action:
-  runs-on: [ ubuntu-latest, windows-latest ]
+ Test:
+  runs-on: ${{ matrix.oc }}
+  strategy:
+   matrix:
+    os: [ macos-latest, ubuntu-latest, windows-latest ]
   steps:
-   - uses: actions/checkout@v2
-   - run: echo "the job was automatically triggered by a ${{ github.even_name }} event ."
+
+   - uses: actions/checkout@v2 
    - run: python main.py
 
